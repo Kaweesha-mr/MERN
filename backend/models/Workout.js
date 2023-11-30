@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const scheema = mongoose.Schema
 
-const workoutScheema = new Schema({
+const workoutScheema = new scheema({
     title:{
         type: String,
         required: true
@@ -11,7 +11,7 @@ const workoutScheema = new Schema({
         type: Number,
         required: true
     },
-    load: {
+    loads: {
         type: Number,
         required: true
     }
