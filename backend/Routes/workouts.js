@@ -15,8 +15,9 @@ router.get('/:id',(req,res)=>{
 
 
 //post a new workout
-
-router.post('/:id',(req,res) => {
+router.post('/',(req,res) => {
+    const{title,load,reps} = req.body;
+    
     res.json({mssg: "post a new workout"})
 })
 
