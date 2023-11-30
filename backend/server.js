@@ -2,9 +2,17 @@
 const express = require('express')
 
 
+const workoutRoutes = require('./Routes/workouts')
+
+
 
 //setup the express app
 const app = express();
+
+//middleware
+
+//this will parse the incoming json data and make it available in the req.body
+app.use(express.json());
 
 //next is used to let the codes to continue to the next middleware
 app.use((req,res,next) => {
@@ -15,11 +23,7 @@ app.use((req,res,next) => {
 
 
 //setting up the basic route to test
-app.get('/', (req,res) => {
-    res.json({mssg:'welcome to the app'})
-
-})
-
+app.use('/api/workouts',workoutRoutes);
 
 
 //listen for requests
